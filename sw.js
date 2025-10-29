@@ -7,10 +7,10 @@ APP_SHELL_CACHE_NAME = `ikeber-app-shell-${CURRENT_VERSION}`;
 DATA_CACHE_NAME = `ikeber-data-cache-${CURRENT_VERSION}`;
 
 const urlsToCache = [
-  '/', // Добавим корневой путь, так как index.html может быть запрошен как '/'
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon.png'
+  './', // Добавим корневой путь, так как index.html может быть запрошен как '/'
+  './index.html',
+  './manifest.json',
+  './icons/icon.png'
   // Внешние ресурсы убраны для надежности установки.
   // Они будут кэшироваться при первом использовании через обработчик 'fetch'.
 ];
@@ -58,7 +58,7 @@ self.addEventListener('fetch', event => {
   }
 
   // Стратегия для API запросов: "Сначала сеть, потом кеш" с обходом HTTP-кеша
-  if (requestUrl.pathname.startsWith('/api/')) {
+  if (requestUrl.pathname.includes('/api/')) {
     // Не кэшируем POST-запросы
     if (event.request.method !== 'GET') {
       return event.respondWith(fetch(event.request));
@@ -82,9 +82,9 @@ self.addEventListener('fetch', event => {
     );
   }
   // Стратегия для index.html и админки: принудительное обновление при изменении версии
-  else if (requestUrl.pathname === '/' || 
+  else if (requestUrl.pathname === '/' ||
            requestUrl.pathname === '/index.html' ||
-           requestUrl.pathname.startsWith('/admin/')) {
+           requestUrl.pathname.includes('/admin/')) {
     event.respondWith(
       (async () => {
         const cache = await caches.open(DATA_CACHE_NAME);

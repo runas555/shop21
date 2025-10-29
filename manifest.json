@@ -4,19 +4,19 @@
   "description": "Мои товары",
   "icons": [
     {
-      "src": "/icons/icon.png",
+      "src": "icons/icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/icon.png",
+      "src": "icons/icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/admin/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3b82f6",
-  "scope": "/admin/"
+  "scope": "./"
 }
