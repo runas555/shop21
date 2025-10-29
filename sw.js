@@ -7,10 +7,10 @@ APP_SHELL_CACHE_NAME = `ikeber-app-shell-${CURRENT_VERSION}`;
 DATA_CACHE_NAME = `ikeber-data-cache-${CURRENT_VERSION}`;
 
 const urlsToCache = [
-  './', // Добавим корневой путь, так как index.html может быть запрошен как '/'
-  './index.html',
-  './manifest.json',
-  './icons/icon.png'
+  '/shop21/', // Добавим корневой путь, так как index.html может быть запрошен как '/'
+  '/shop21/index.html',
+  '/shop21/manifest.json',
+  '/shop21/icons/icon.png'
   // Внешние ресурсы убраны для надежности установки.
   // Они будут кэшироваться при первом использовании через обработчик 'fetch'.
 ];

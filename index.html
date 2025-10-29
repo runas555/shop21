@@ -7,17 +7,17 @@
     <title>Мой магазин</title>
     <meta name="description" content="Интернет-магазин с широким ассортиментом товаров.">
     <!-- SEO-TAGS-END -->
-    <link rel="icon" href="icons/icon.png" type="image/png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="/shop21/icons/icon.png" type="image/png">
+    <link rel="manifest" href="/shop21/manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#ffffff">
     <meta name="build-version" content="$env:VERCEL_GIT_COMMIT_SHA">
-    <link rel="stylesheet" href="lib/tailwind.css">
-    <script src="lib/jquery.min.js"></script>
-    <link rel="stylesheet" href="lib/all.min.css">
-    <script src="lib/jquery.suggestions.min.js"></script>
-    <link href="lib/suggestions.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/shop21/lib/tailwind.css">
+    <script src="/shop21/lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="/shop21/lib/all.min.css">
+    <script src="/shop21/lib/jquery.suggestions.min.js"></script>
+    <link href="/shop21/lib/suggestions.min.css" rel="stylesheet" />
     <script src="https://api-maps.yandex.ru/2.1/?apikey=3f537f51-ad8a-45a1-ad5d-768f40314a3e&lang=ru_RU" type="text/javascript"></script>
     <!-- STRUCTURED-DATA-START -->
     <!-- STRUCTURED-DATA-END -->
@@ -2497,7 +2497,7 @@
 
         function registerServiceWorker() {
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('sw.js')
+                navigator.serviceWorker.register('/shop21/sw.js')
                     .then(registration => {
                         console.log('Service Worker зарегистрирован:', registration);
                     })
@@ -2578,7 +2578,7 @@
             });
 
             // Fetch and inject the policy content
-            fetch('privacy-policy.html')
+            fetch('/shop21/privacy-policy.html')
                 .then(response => response.text())
                 .then(html => {
                     const parser = new DOMParser();
