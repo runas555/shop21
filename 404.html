@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправление...</title>
+    <script>
+        // GitHub Pages SPA Routing
+        // Redirect all 404 pages to index.html for client-side routing
+        sessionStorage.redirect = location.pathname;
+        location.replace('/');
+    </script>
+</head>
+<body>
+    <noscript>
+        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+            <h1>JavaScript требуется для работы приложения</h1>
+            <p>Пожалуйста, включите JavaScript и перезагрузите страницу.</p>
+            <a href="/">Вернуться на главную</a>
+        </div>
+    </noscript>
+</body>
+</html>
